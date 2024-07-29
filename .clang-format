@@ -54,7 +54,7 @@ DerivePointerAlignment: false  # Derive pointer alignment
 PointerAlignment: Middle  # Options: Left, Right, Middle
 
 # Column Limit
-ColumnLimit: 64  # Maximum column limit for lines
+ColumnLimit: 80  # Maximum column limit for lines
 
 # Formatting Style
 BinPackArguments: true  # Bin-pack function arguments
