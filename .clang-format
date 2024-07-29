@@ -1,0 +1,114 @@
+# Alignment
+AlignAfterOpenBracket: Align  # Options: Align, DontAlign, AlwaysBreak
+AlignConsecutiveAssignments: true  # Align consecutive assignments
+AlignConsecutiveDeclarations: true  # Align consecutive declarations
+AlignEscapedNewlines: Right  # Options: DontAlign, Left, Right
+AlignOperands: true  # Align operands of binary and ternary expressions
+AlignTrailingComments: true  # Align trailing comments
+
+# Allow options
+AllowShortBlocksOnASingleLine: Never  # Options: Never, Empty, Always
+AllowShortCaseLabelsOnASingleLine: false  # Allow short case labels on a single line
+AllowShortEnumsOnASingleLine: true  # Allow short enums on a single line
+AllowShortFunctionsOnASingleLine: Inline  # Options: None, Inline, All
+AllowShortIfStatementsOnASingleLine: false  # Allow short if statements on a single line
+AllowShortLoopsOnASingleLine: false  # Allow short loops on a single line
+AllowShortLambdasOnASingleLine: Empty  # Allow short lambdas on a single line
+AllowAllParametersOfDeclarationOnNextLine: false
+
+# Braces and Breaking
+BreakBeforeBinaryOperators: None  # Options: None, NonAssignment, All
+BreakBeforeBraces: Custom  # Options: Attach, Linux, Mozilla, Stroustrup, Allman, Whitesmiths, GNU, WebKit, Custom
+BreakBeforeTernaryOperators: true  # Break before ternary operators
+BreakInheritanceList: BeforeColon  # Options: BeforeColon, BeforeComma, AfterColon
+
+# Brace Wrapping
+BraceWrapping:
+  AfterControlStatement: false  # Wrap braces after control statements (if, for, while, etc.)
+  AfterEnum: false  # Wrap braces after enum
+  AfterFunction: true  # Wrap braces after function
+  AfterStruct: false  # Wrap braces after struct
+  AfterUnion: false  # Wrap braces after union
+  BeforeElse: false  # Wrap braces before else
+  IndentBraces: false  # Indent braces
+  SplitEmptyFunction: true  # Split empty function
+  SplitEmptyRecord: true  # Split empty record
+RemoveBracesLLVM: true
+
+# Indentation
+AccessModifierOffset: -2  # Indentation for access modifiers (e.g., public, private)
+AlignEscapedNewlinesLeft: true  # Align escaped newlines to the left
+IndentWidth: 4  # Number of spaces per indentation level
+ContinuationIndentWidth: 4  # Number of spaces per indentation level for continuation lines
+UseTab: Never  # Options: Never, ForIndentation, Always
+IndentCaseLabels: true  # Indent case labels
+IndentGotoLabels: true  # Indent goto labels
+IndentPPDirectives: None  # Options: None, AfterHash, BeforeHash
+IndentExternBlock: AfterExternBlock  # Indent extern blocks
+IndentWrappedFunctionNames: false  # Indent wrapped function names
+IndentRequires: false  # Indent requires clauses
+IndentCaseBlocks: false  # Indent case blocks
+
+# Pointer and Reference Alignment
+DerivePointerAlignment: false  # Derive pointer alignment
+PointerAlignment: Middle  # Options: Left, Right, Middle
+
+# Column Limit
+ColumnLimit: 64  # Maximum column limit for lines
+
+# Formatting Style
+BinPackArguments: true  # Bin-pack function arguments
+BinPackParameters: true  # Bin-pack function parameters
+Cpp11BracedListStyle: true  # Use C++11 braced list style
+DeriveLineEnding: true  # Derive line ending from the input file
+DisableFormat: false  # Disable formatting
+ExperimentalAutoDetectBinPacking: false  # Experimental auto-detection of bin-packing
+IncludeBlocks: Preserve  # Options: Preserve, Merge, Regroup
+IncludeCategories:  # Define include categories
+  - Regex: '^<.*\.h>'
+    Priority: 2
+    SortPriority: 0
+  - Regex: '^<.*>'
+    Priority: 1
+    SortPriority: 0
+  - Regex: '.*'
+    Priority: 3
+    SortPriority: 0
+IncludeIsMainRegex: '(Test)?$'  # Regex for main include
+IncludeIsMainSourceRegex: ''  # Regex for main source include
+KeepEmptyLinesAtTheStartOfBlocks: false  # Keep empty lines at the start of blocks
+MaxEmptyLinesToKeep: 1  # Maximum number of empty lines to keep
+PenaltyBreakBeforeFirstCallParameter: 19  # Penalty for breaking before the first call parameter
+PenaltyBreakComment: 300  # Penalty for breaking comments
+PenaltyBreakFirstLessLess: 120  # Penalty for breaking <<
+PenaltyBreakString: 1000  # Penalty for breaking strings
+PenaltyExcessCharacter: 1000000  # Penalty for excess characters
+PenaltyReturnTypeOnItsOwnLine: 200  # Penalty for return type on its own line
+ReflowComments: true  # Reflow comments
+SortIncludes: false  # Sort includes
+SortUsingDeclarations: true  # Sort using declarations
+SpaceAfterCStyleCast: true  # Space after C-style cast
+SpaceAfterTemplateKeyword: true  # Space after template keyword
+SpaceBeforeAssignmentOperators: true  # Space before assignment operators
+SpaceBeforeCaseColon: false  # Space before case colon
+SpaceBeforeCpp11BracedList: false  # Space before C++11 braced list
+SpaceBeforeCtorInitializerColon: true  # Space before constructor initializer colon
+SpaceBeforeInheritanceColon: true  # Space before inheritance colon
+SpaceBeforeParens: Always  # Options: Never, ControlStatements, Always
+SpaceBeforeRangeBasedForLoopColon: true  # Space before range-based for loop colon
+SpaceBeforeSquareBrackets: false  # Space before square brackets
+SpaceInEmptyParentheses: false  # Space in empty parentheses
+SpacesBeforeTrailingComments: 2  # Number of spaces before trailing comments
+SpacesInAngles: false  # Spaces in angle brackets
+SpacesInContainerLiterals: false  # Spaces in container literals
+SpacesInCStyleCastParentheses: false  # Spaces in C-style cast parentheses
+SpacesInParentheses: false  # Spaces in parentheses
+SpacesInSquareBrackets: false  # Spaces in square brackets
+Standard: Cpp11  # Language standard to use
+StatementMacros:  # Macros that should be interpreted as statements
+  - Q_UNUSED
+  - QT_REQUIRE_VERSION
+UseCRLF: false  # Use CRLF line endings
+WhitespaceSensitiveMacros:  # Macros that are sensitive to whitespace
+  - STRINGIZE
+  - PP_STRINGIZE
