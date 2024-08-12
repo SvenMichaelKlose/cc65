@@ -130,14 +130,14 @@ Here is a description of all the command line options:
   <tag><tt>--bss-name seg</tt></tag>
 
   Set the name of the bss segment. See also <tt/<ref id="pragma-bss-name"
-  name="#pragma&nbsp;bss-name">/.
+  name="#pragma&nbsp;bss_name">/.
 
 
   <label id="option-check-stack">
   <tag><tt>--check-stack</tt></tag>
 
   Tells the compiler to generate code that checks for stack overflows. See
-  <tt/<ref id="pragma-check-stack" name="#pragma&nbsp;check-stack">/ for an
+  <tt/<ref id="pragma-check-stack" name="#pragma&nbsp;check_stack">/ for an
   explanation of this feature.
 
 
@@ -145,7 +145,7 @@ Here is a description of all the command line options:
   <tag><tt>--code-name seg</tt></tag>
 
   Set the name of the code segment. See also <tt/<ref id="pragma-code-name"
-  name="#pragma&nbsp;code-name">/
+  name="#pragma&nbsp;code_name">/
 
 
   <label id="option-codesize">
@@ -190,7 +190,7 @@ Here is a description of all the command line options:
   <tag><tt>--data-name seg</tt></tag>
 
   Set the name of the data segment. See also <tt/<ref id="pragma-data-name"
-  name="#pragma&nbsp;data-name">/
+  name="#pragma&nbsp;data_name">/
 
 
   <tag><tt>-d, --debug</tt></tag>
@@ -449,7 +449,7 @@ Here is a description of all the command line options:
   <tt/--eagerly-inline-funcs/ implies the <tt><ref id="option-inline-stdfuncs"
   name="--inline-stdfuncs"></tt> command line option.
 
-  See also <tt><ref id="pragma-allow-eager-inline" name="#pragma&nbsp;allow-eager-inline"></tt>.
+  See also <tt><ref id="pragma-allow-eager-inline" name="#pragma&nbsp;allow_eager_inline"></tt>.
 
 
   <tag><tt>-h, --help</tt></tag>
@@ -464,7 +464,7 @@ Here is a description of all the command line options:
   strlen.  This will not only remove the overhead for a function call, but will
   make the code visible for the optimizer.  See also the <tt><ref id="option-O"
   name="-Os"></tt> command line option and <tt><ref id="pragma-inline-stdfuncs"
-  name="#pragma&nbsp;inline-stdfuncs"></tt>.
+  name="#pragma&nbsp;inline_stdfuncs"></tt>.
 
 
   <label id="option-list-warnings">
@@ -486,7 +486,7 @@ Here is a description of all the command line options:
   segments will work.
 
   You can also use <tt><ref id="pragma-local-strings"
-  name="#pragma&nbsp;local-strings"></tt> for fine grained control.
+  name="#pragma&nbsp;local_strings"></tt> for fine grained control.
 
 
   <tag><tt>-o name</tt></tag>
@@ -509,7 +509,7 @@ Here is a description of all the command line options:
   name="register variables">.
 
   The compiler setting can also be changed within the source file by using
-  <tt/<ref id="pragma-register-vars" name="#pragma&nbsp;register-vars">/.
+  <tt/<ref id="pragma-register-vars" name="#pragma&nbsp;register_vars">/.
 
 
   <label id="option-register-space">
@@ -530,7 +530,7 @@ Here is a description of all the command line options:
   <tag><tt>--rodata-name seg</tt></tag>
 
   Set the name of the rodata segment (the segment used for readonly data).
-  See also <tt/<ref id="pragma-rodata-name" name="#pragma&nbsp;rodata-name">/
+  See also <tt/<ref id="pragma-rodata-name" name="#pragma&nbsp;rodata_name">/
 
   <label id="option-signed-chars">
   <tag><tt>-j, --signed-chars</tt></tag>
@@ -540,7 +540,7 @@ Here is a description of all the command line options:
   almost any load operation), this will make the code larger and slower. A
   better way is to declare characters explicitly as "signed" if needed. You
   can also use <tt><ref id="pragma-signed-chars"
-  name="#pragma&nbsp;signed-chars"></tt> for better control of this option.
+  name="#pragma&nbsp;signed_chars"></tt> for better control of this option.
 
 
   <label id="option--standard">
@@ -621,7 +621,7 @@ Here is a description of all the command line options:
 
   Make string literals writable by placing them into the data segment instead
   of the rodata segment. You can also use <tt><ref id="pragma-writable-strings"
-  name="#pragma&nbsp;writable-strings"></tt> to control this option from within
+  name="#pragma&nbsp;writable_strings"></tt> to control this option from within
   the source file.
 
 
@@ -659,7 +659,7 @@ Here is a description of all the command line options:
   function to the next.
 
   You may also use <tt><ref id="pragma-static-locals"
-  name="#pragma&nbsp;static-locals"></tt> to change this setting in your
+  name="#pragma&nbsp;static_locals"></tt> to change this setting in your
   sources.
 
 
@@ -1274,7 +1274,7 @@ before changing it. The value may later be restored by using the <tt/pop/
 parameter with the <tt/#pragma/.
 
 
-<sect1><tt>#pragma allow-eager-inline ([push,] on|off)</tt><label id="pragma-allow-eager-inline"><p>
+<sect1><tt>#pragma allow_eager_inline ([push,] on|off)</tt><label id="pragma-allow-eager-inline"><p>
 
   Allow eager inlining of known functions.  If the argument is "off", eager
   inlining is disabled, otherwise it is enabled. Please note that (in contrast
@@ -1286,7 +1286,7 @@ parameter with the <tt/#pragma/.
   The <tt/#pragma/ understands the push and pop parameters as explained above.
 
 
-<sect1><tt>#pragma bss-name ([push, ]&lt;name>[ ,&lt;addrsize>])</tt><label id="pragma-bss-name"><p>
+<sect1><tt>#pragma bss_name ([push, ]&lt;name>[ ,&lt;addrsize>])</tt><label id="pragma-bss-name"><p>
 
   This pragma changes the name used for the BSS segment (the BSS segment is
   used to store variables with static storage duration and no explicit
@@ -1316,9 +1316,9 @@ parameter with the <tt/#pragma/.
 
   Examples:
   <tscreen><verb>
-  #pragma bss-name ("MyBSS")
-  #pragma bss-name (push, "MyBSS")
-  #pragma bss-name ("MyBSS", "zp")
+  #pragma bss_name ("MyBSS")
+  #pragma bss_name (push, "MyBSS")
+  #pragma bss_name ("MyBSS", "zp")
   </verb></tscreen>
 
 
@@ -1362,7 +1362,7 @@ parameter with the <tt/#pragma/.
   </verb></tscreen>
 
 
-<sect1><tt>#pragma check-stack ([push,] on|off)</tt><label id="pragma-check-stack"><p>
+<sect1><tt>#pragma check_stack ([push,] on|off)</tt><label id="pragma-check-stack"><p>
 
   Tells the compiler to insert calls to a stack checking subroutine to detect
   stack overflows. The stack checking code will lead to somewhat larger and
@@ -1376,7 +1376,7 @@ parameter with the <tt/#pragma/.
   The <tt/#pragma/ understands the push and pop parameters as explained above.
 
 
-<sect1><tt>#pragma code-name ([push, ]&lt;name>[ ,&lt;addrsize>])</tt><label id="pragma-code-name"><p>
+<sect1><tt>#pragma code_name ([push, ]&lt;name>[ ,&lt;addrsize>])</tt><label id="pragma-code-name"><p>
 
   This pragma changes the name used for the CODE segment (the CODE segment is
   used to store executable code). The <tt/name/ argument is a string enclosed
@@ -1400,9 +1400,9 @@ parameter with the <tt/#pragma/.
 
   Examples:
   <tscreen><verb>
-  #pragma code-name ("MyCODE")
-  #pragma code-name (push, "MyCODE")
-  #pragma code-name (push, "MyCODE", "far")
+  #pragma code_name ("MyCODE")
+  #pragma code_name (push, "MyCODE")
+  #pragma code_name (push, "MyCODE", "far")
   </verb></tscreen>
 
 
@@ -1416,7 +1416,7 @@ parameter with the <tt/#pragma/.
   The <tt/#pragma/ understands the push and pop parameters as explained above.
 
 
-<sect1><tt>#pragma data-name ([push, ]&lt;name>[ ,&lt;addrsize>])</tt><label id="pragma-data-name"><p>
+<sect1><tt>#pragma data_name ([push, ]&lt;name>[ ,&lt;addrsize>])</tt><label id="pragma-data-name"><p>
 
   This pragma changes the name used for the DATA segment (the DATA segment is
   used to store initialized data). The <tt/name/ argument is a string enclosed
@@ -1440,13 +1440,13 @@ parameter with the <tt/#pragma/.
 
   Examples:
   <tscreen><verb>
-  #pragma data-name ("MyDATA")
-  #pragma data-name (push, "MyDATA")
-  #pragma data-name ("MyDATA", "zeropage")
+  #pragma data_name ("MyDATA")
+  #pragma data_name (push, "MyDATA")
+  #pragma data_name ("MyDATA", "zeropage")
   </verb></tscreen>
 
 
-<sect1><tt>#pragma inline-stdfuncs ([push,] on|off)</tt><label id="pragma-inline-stdfuncs"><p>
+<sect1><tt>#pragma inline_stdfuncs ([push,] on|off)</tt><label id="pragma-inline-stdfuncs"><p>
 
   Allow the compiler to inline some standard functions from the C library like
   strlen.  If the argument is "off", inlining is disabled, otherwise it is enabled.
@@ -1457,7 +1457,7 @@ parameter with the <tt/#pragma/.
   The <tt/#pragma/ understands the push and pop parameters as explained above.
 
 
-<sect1><tt>#pragma local-strings ([push,] on|off)</tt><label id="pragma-local-strings"><p>
+<sect1><tt>#pragma local_strings ([push,] on|off)</tt><label id="pragma-local-strings"><p>
 
   When "on", emit string literals to the data segment when they're encountered
   in the source. The default ("off") is to keep string literals until end of
@@ -1465,7 +1465,7 @@ parameter with the <tt/#pragma/.
   into the data or rodata segment that is active at that point.
 
   Using this <tt/#pragma/ it is possible to control the behaviour from within
-  the source. When <tt/#pragma local-strings/ is active, string literals are
+  the source. When <tt/#pragma local_strings/ is active, string literals are
   output immediately, which means that they go into the currently active data
   or rodata segment, but cannot be merged. When inactive, string literals are
   remembered and output as a whole when translation is finished.
@@ -1504,7 +1504,7 @@ parameter with the <tt/#pragma/.
   The <tt/#pragma/ understands the push and pop parameters as explained above.
 
 
-<sect1><tt>#pragma rodata-name ([push, ]&lt;name>[ ,&lt;addrsize>])</tt><label id="pragma-rodata-name"><p>
+<sect1><tt>#pragma rodata_name ([push, ]&lt;name>[ ,&lt;addrsize>])</tt><label id="pragma-rodata-name"><p>
 
   This pragma changes the name used for the RODATA segment (the RODATA segment
   is used to store read-only data). The <tt/name/ argument is a string enclosed
@@ -1528,8 +1528,8 @@ parameter with the <tt/#pragma/.
 
   Examples:
   <tscreen><verb>
-  #pragma rodata-name ("MyRODATA")
-  #pragma rodata-name (push, "MyRODATA")
+  #pragma rodata_name ("MyRODATA")
+  #pragma rodata_name (push, "MyRODATA")
   </verb></tscreen>
 
 
@@ -1557,7 +1557,7 @@ parameter with the <tt/#pragma/.
   </verb></tscreen>
 
 
-<sect1><tt>#pragma register-vars ([push,] on|off)</tt><label id="pragma-register-vars"><p>
+<sect1><tt>#pragma register_vars ([push,] on|off)</tt><label id="pragma-register-vars"><p>
 
   Enables or disables use of register variables. If register variables are
   disabled (the default), the <tt/register/ keyword is ignored. Register
@@ -1567,7 +1567,7 @@ parameter with the <tt/#pragma/.
   The <tt/#pragma/ understands the push and pop parameters as explained above.
 
 
-<sect1><tt>#pragma signed-chars ([push,] on|off)</tt><label id="pragma-signed-chars"><p>
+<sect1><tt>#pragma signed_chars ([push,] on|off)</tt><label id="pragma-signed-chars"><p>
 
   Changes the signedness of the default character type. If the argument is
   "on", default characters are signed, otherwise characters are unsigned. The
@@ -1578,7 +1578,7 @@ parameter with the <tt/#pragma/.
   The <tt/#pragma/ understands the push and pop parameters as explained above.
 
 
-<sect1><tt>#pragma static-locals ([push,] on|off)</tt><label id="pragma-static-locals"<p>
+<sect1><tt>#pragma static_locals ([push,] on|off)</tt><label id="pragma-static-locals"<p>
 
   Use variables in the bss segment instead of variables on the stack. This
   pragma changes the default set by the compiler option <tt/<ref
@@ -1609,7 +1609,7 @@ parameter with the <tt/#pragma/.
   </verb></tscreen>
 
 
-<sect1><tt>#pragma wrapped-call (push, &lt;name&gt;, &lt;identifier&gt;)</tt><label id="pragma-wrapped-call"><p>
+<sect1><tt>#pragma wrapped_call (push, &lt;name&gt;, &lt;identifier&gt;)</tt><label id="pragma-wrapped-call"><p>
 
   This pragma sets a wrapper for functions, often used for trampolines.
 
@@ -1645,14 +1645,14 @@ parameter with the <tt/#pragma/.
 /* Note that this code can be in a header. */
 void mytrampoline(void); /* Doesn't corrupt __AX__ */
 
-#pragma wrapped-call (push, mytrampoline, 5)
+#pragma wrapped_call (push, mytrampoline, 5)
 void somefunc1(void);
 void somefunc2(int, char *);
-#pragma wrapped-call (pop)
+#pragma wrapped_call (pop)
   </verb></tscreen>
 
 
-<sect1><tt>#pragma writable-strings ([push,] on|off)</tt><label id="pragma-writable-strings"><p>
+<sect1><tt>#pragma writable_strings ([push,] on|off)</tt><label id="pragma-writable-strings"><p>
 
   Changes the storage location of string literals. For historical reasons,
   the C standard defines that string literals are of type "char[]", but

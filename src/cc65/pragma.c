@@ -67,32 +67,45 @@ typedef enum {
     PRAGMA_ILLEGAL = -1,
     PRAGMA_ALIGN,
     PRAGMA_ALLOW_EAGER_INLINE,
+    PRAGMA_ALLOW_EAGER_INLINE_OBSOLETE,
     PRAGMA_BSS_NAME,
-    PRAGMA_BSSSEG,                                      /* obsolete */
+    PRAGMA_BSS_NAME_OBSOLETE,
+    PRAGMA_BSSSEG_OBSOLETE,
     PRAGMA_CHARMAP,
     PRAGMA_CHECK_STACK,
-    PRAGMA_CHECKSTACK,                                  /* obsolete */
+    PRAGMA_CHECK_STACK_OBSOLETE,
+    PRAGMA_CHECKSTACK_OBSOLETE,
     PRAGMA_CODE_NAME,
-    PRAGMA_CODESEG,                                     /* obsolete */
+    PRAGMA_CODE_NAME_OBSOLETE,
+    PRAGMA_CODESEG_OBSOLETE,
     PRAGMA_CODESIZE,
     PRAGMA_DATA_NAME,
-    PRAGMA_DATASEG,                                     /* obsolete */
+    PRAGMA_DATA_NAME_OBSOLETE,
+    PRAGMA_DATASEG_OBSOLETE,
     PRAGMA_INLINE_STDFUNCS,
+    PRAGMA_INLINE_STDFUNCS_OBSOLETE,
     PRAGMA_LOCAL_STRINGS,
+    PRAGMA_LOCAL_STRINGS_OBSOLETE,
     PRAGMA_MESSAGE,
     PRAGMA_OPTIMIZE,
     PRAGMA_REGISTER_VARS,
+    PRAGMA_REGISTER_VARS_OBSOLETE,
     PRAGMA_REGVARADDR,
-    PRAGMA_REGVARS,                                     /* obsolete */
+    PRAGMA_REGVARS_OBSOLETE,
     PRAGMA_RODATA_NAME,
-    PRAGMA_RODATASEG,                                   /* obsolete */
+    PRAGMA_RODATA_NAME_OBSOLETE,
+    PRAGMA_RODATASEG_OBSOLETE,
     PRAGMA_SIGNED_CHARS,
-    PRAGMA_SIGNEDCHARS,                                 /* obsolete */
+    PRAGMA_SIGNED_CHARS_OBSOLETE,
+    PRAGMA_SIGNEDCHARS_OBSOLETE,
     PRAGMA_STATIC_LOCALS,
-    PRAGMA_STATICLOCALS,                                /* obsolete */
+    PRAGMA_STATIC_LOCALS_OBSOLETE,
+    PRAGMA_STATICLOCALS_OBSOLETE,
     PRAGMA_WARN,
     PRAGMA_WRAPPED_CALL,
+    PRAGMA_WRAPPED_CALL_OBSOLETE,
     PRAGMA_WRITABLE_STRINGS,
+    PRAGMA_WRITABLE_STRINGS_OBSOLETE,
     PRAGMA_ZPSYM,
     PRAGMA_COUNT
 } pragma_t;
@@ -102,35 +115,48 @@ static const struct Pragma {
     const char* Key;            /* Keyword */
     pragma_t    Tok;            /* Token */
 } Pragmas[PRAGMA_COUNT] = {
-    { "align",                  PRAGMA_ALIGN              },
-    { "allow-eager-inline",     PRAGMA_ALLOW_EAGER_INLINE },
-    { "bss-name",               PRAGMA_BSS_NAME           },
-    { "bssseg",                 PRAGMA_BSSSEG             },      /* obsolete */
-    { "charmap",                PRAGMA_CHARMAP            },
-    { "check-stack",            PRAGMA_CHECK_STACK        },
-    { "checkstack",             PRAGMA_CHECKSTACK         },      /* obsolete */
-    { "code-name",              PRAGMA_CODE_NAME          },
-    { "codeseg",                PRAGMA_CODESEG            },      /* obsolete */
-    { "codesize",               PRAGMA_CODESIZE           },
-    { "data-name",              PRAGMA_DATA_NAME          },
-    { "dataseg",                PRAGMA_DATASEG            },      /* obsolete */
-    { "inline-stdfuncs",        PRAGMA_INLINE_STDFUNCS    },
-    { "local-strings",          PRAGMA_LOCAL_STRINGS      },
-    { "message",                PRAGMA_MESSAGE            },
-    { "optimize",               PRAGMA_OPTIMIZE           },
-    { "register-vars",          PRAGMA_REGISTER_VARS      },
-    { "regvaraddr",             PRAGMA_REGVARADDR         },
-    { "regvars",                PRAGMA_REGVARS            },      /* obsolete */
-    { "rodata-name",            PRAGMA_RODATA_NAME        },
-    { "rodataseg",              PRAGMA_RODATASEG          },      /* obsolete */
-    { "signed-chars",           PRAGMA_SIGNED_CHARS       },
-    { "signedchars",            PRAGMA_SIGNEDCHARS        },      /* obsolete */
-    { "static-locals",          PRAGMA_STATIC_LOCALS      },
-    { "staticlocals",           PRAGMA_STATICLOCALS       },      /* obsolete */
-    { "warn",                   PRAGMA_WARN               },
-    { "wrapped-call",           PRAGMA_WRAPPED_CALL       },
-    { "writable-strings",       PRAGMA_WRITABLE_STRINGS   },
-    { "zpsym",                  PRAGMA_ZPSYM              },
+    { "align",                  PRAGMA_ALIGN },
+    { "allow_eager_inline",     PRAGMA_ALLOW_EAGER_INLINE },
+    { "allow-eager-inline",     PRAGMA_ALLOW_EAGER_INLINE_OBSOLETE },
+    { "bss_name",               PRAGMA_BSS_NAME },
+    { "bss-name",               PRAGMA_BSS_NAME_OBSOLETE },
+    { "bssseg",                 PRAGMA_BSSSEG_OBSOLETE },
+    { "charmap",                PRAGMA_CHARMAP },
+    { "check_stack",            PRAGMA_CHECK_STACK },
+    { "check-stack",            PRAGMA_CHECK_STACK_OBSOLETE },
+    { "checkstack",             PRAGMA_CHECKSTACK_OBSOLETE },
+    { "code_name",              PRAGMA_CODE_NAME },
+    { "code-name",              PRAGMA_CODE_NAME_OBSOLETE },
+    { "codeseg",                PRAGMA_CODESEG_OBSOLETE },
+    { "codesize",               PRAGMA_CODESIZE },
+    { "data_name",              PRAGMA_DATA_NAME },
+    { "data-name",              PRAGMA_DATA_NAME_OBSOLETE },
+    { "dataseg",                PRAGMA_DATASEG_OBSOLETE },
+    { "inline_stdfuncs",        PRAGMA_INLINE_STDFUNCS },
+    { "inline-stdfuncs",        PRAGMA_INLINE_STDFUNCS_OBSOLETE },
+    { "local_strings",          PRAGMA_LOCAL_STRINGS },
+    { "local-strings",          PRAGMA_LOCAL_STRINGS_OBSOLETE },
+    { "message",                PRAGMA_MESSAGE },
+    { "optimize",               PRAGMA_OPTIMIZE },
+    { "register_vars",          PRAGMA_REGISTER_VARS },
+    { "register-vars",          PRAGMA_REGISTER_VARS_OBSOLETE },
+    { "regvaraddr",             PRAGMA_REGVARADDR },
+    { "regvars",                PRAGMA_REGVARS_OBSOLETE },
+    { "rodata_name",            PRAGMA_RODATA_NAME },
+    { "rodata-name",            PRAGMA_RODATA_NAME_OBSOLETE },
+    { "rodataseg",              PRAGMA_RODATASEG_OBSOLETE },
+    { "signed_chars",           PRAGMA_SIGNED_CHARS },
+    { "signed-chars",           PRAGMA_SIGNED_CHARS_OBSOLETE },
+    { "signedchars",            PRAGMA_SIGNEDCHARS_OBSOLETE },
+    { "static_locals",          PRAGMA_STATIC_LOCALS },
+    { "static-locals",          PRAGMA_STATIC_LOCALS_OBSOLETE },
+    { "staticlocals",           PRAGMA_STATICLOCALS_OBSOLETE },
+    { "warn",                   PRAGMA_WARN },
+    { "wrapped_call",           PRAGMA_WRAPPED_CALL },
+    { "wrapped-call",           PRAGMA_WRAPPED_CALL_OBSOLETE },
+    { "writable_strings",       PRAGMA_WRITABLE_STRINGS },
+    { "writable-strings",       PRAGMA_WRITABLE_STRINGS_OBSOLETE },
+    { "zpsym",                  PRAGMA_ZPSYM },
 };
 
 /* Result of ParsePushPop */
@@ -402,22 +428,22 @@ static void ApplySegNamePragma (pragma_t Token, int PushPop, const char* Name, u
 
     switch (Token) {
         case PRAGMA_CODE_NAME:
-        case PRAGMA_CODESEG:
+        case PRAGMA_CODESEG_OBSOLETE:
             Seg = SEG_CODE;
             break;
 
         case PRAGMA_RODATA_NAME:
-        case PRAGMA_RODATASEG:
+        case PRAGMA_RODATASEG_OBSOLETE:
             Seg = SEG_RODATA;
             break;
 
         case PRAGMA_DATA_NAME:
-        case PRAGMA_DATASEG:
+        case PRAGMA_DATASEG_OBSOLETE:
             Seg = SEG_DATA;
             break;
 
         case PRAGMA_BSS_NAME:
-        case PRAGMA_BSSSEG:
+        case PRAGMA_BSSSEG_OBSOLETE:
             Seg = SEG_BSS;
             break;
 
@@ -933,10 +959,14 @@ static void ParsePragmaString (void)
             FlagPragma (PES_STMT, Pragma, &B, &EagerlyInlineFuncs);
             break;
 
-        case PRAGMA_BSSSEG:
-            Warning ("#pragma bssseg is obsolete, please use #pragma bss-name instead");
+        case PRAGMA_BSSSEG_OBSOLETE:
+            Warning ("#pragma bssseg is obsolete, please use #pragma bss_name instead");
+            goto bss_name;
+        case PRAGMA_BSS_NAME_OBSOLETE:
+            Warning ("#pragma bss-name is obsolete, please use #pragma bss_name instead");
             /* FALLTHROUGH */
         case PRAGMA_BSS_NAME:
+bss_name:
             /* TODO: PES_STMT or even PES_EXPR (PES_DECL) maybe? */
             SegNamePragma (PES_FUNC, PRAGMA_BSS_NAME, &B);
             break;
@@ -945,18 +975,26 @@ static void ParsePragmaString (void)
             CharMapPragma (PES_IMM, &B);
             break;
 
-        case PRAGMA_CHECKSTACK:
-            Warning ("#pragma checkstack is obsolete, please use #pragma check-stack instead");
+        case PRAGMA_CHECKSTACK_OBSOLETE:
+            Warning ("#pragma checkstack is obsolete, please use #pragma check_stack instead");
+            goto check_stack;
+        case PRAGMA_CHECK_STACK_OBSOLETE:
+            Warning ("#pragma check-stack is obsolete, please use #pragma check_stack instead");
             /* FALLTHROUGH */
         case PRAGMA_CHECK_STACK:
+check_stack:
             /* TODO: PES_SCOPE maybe? */
             FlagPragma (PES_FUNC, Pragma, &B, &CheckStack);
             break;
 
-        case PRAGMA_CODESEG:
-            Warning ("#pragma codeseg is obsolete, please use #pragma code-name instead");
+        case PRAGMA_CODESEG_OBSOLETE:
+            Warning ("#pragma codeseg is obsolete, please use #pragma code_name instead");
+            goto code_name;
+        case PRAGMA_CODE_NAME_OBSOLETE:
+            Warning ("#pragma code-name is obsolete, please use #pragma code_name instead");
             /* FALLTHROUGH */
         case PRAGMA_CODE_NAME:
+code_name:
             /* PES_FUNC is the only sensible option so far */
             SegNamePragma (PES_FUNC, PRAGMA_CODE_NAME, &B);
             break;
@@ -966,19 +1004,29 @@ static void ParsePragmaString (void)
             IntPragma (PES_STMT, Pragma, &B, &CodeSizeFactor, 10, 1000);
             break;
 
-        case PRAGMA_DATASEG:
-            Warning ("#pragma dataseg is obsolete, please use #pragma data-name instead");
+        case PRAGMA_DATASEG_OBSOLETE:
+            Warning ("#pragma dataseg is obsolete, please use #pragma data_name instead");
+            goto data_name;
+        case PRAGMA_DATA_NAME_OBSOLETE:
+            Warning ("#pragma data-name is obsolete, please use #pragma data_name instead");
             /* FALLTHROUGH */
         case PRAGMA_DATA_NAME:
+data_name:
             /* TODO: PES_STMT or even PES_EXPR (PES_DECL) maybe? */
             SegNamePragma (PES_FUNC, PRAGMA_DATA_NAME, &B);
             break;
 
+        case PRAGMA_INLINE_STDFUNCS_OBSOLETE:
+            Warning ("#pragma inline-stdfuncs is obsolete, please use #pragma inline_stdfuncs instead");
+            /* FALLTHROUGH */
         case PRAGMA_INLINE_STDFUNCS:
             /* TODO: PES_EXPR maybe? */
             FlagPragma (PES_STMT, Pragma, &B, &InlineStdFuncs);
             break;
 
+        case PRAGMA_LOCAL_STRINGS_OBSOLETE:
+            Warning ("#pragma local-strings is obsolete, please use #pragma local_strings instead");
+            /* FALLTHROUGH */
         case PRAGMA_LOCAL_STRINGS:
             /* TODO: PES_STMT or even PES_EXPR */
             FlagPragma (PES_FUNC, Pragma, &B, &LocalStrings);
@@ -999,34 +1047,50 @@ static void ParsePragmaString (void)
             FlagPragma (PES_FUNC, Pragma, &B, &AllowRegVarAddr);
             break;
 
-        case PRAGMA_REGVARS:
-            Warning ("#pragma regvars is obsolete, please use #pragma register-vars instead");
+        case PRAGMA_REGVARS_OBSOLETE:
+            Warning ("#pragma regvars is obsolete, please use #pragma register_vars instead");
+            goto register_vars;
+        case PRAGMA_REGISTER_VARS_OBSOLETE:
+            Warning ("#pragma register-vars is obsolete, please use #pragma register_vars instead");
             /* FALLTHROUGH */
         case PRAGMA_REGISTER_VARS:
+register_vars:
             /* TODO: PES_STMT or even PES_EXPR (PES_DECL) maybe? */
             FlagPragma (PES_FUNC, Pragma, &B, &EnableRegVars);
             break;
 
-        case PRAGMA_RODATASEG:
-            Warning ("#pragma rodataseg is obsolete, please use #pragma rodata-name instead");
+        case PRAGMA_RODATASEG_OBSOLETE:
+            Warning ("#pragma rodataseg is obsolete, please use #pragma rodata_name instead");
+            goto rodata_name;
+        case PRAGMA_RODATA_NAME_OBSOLETE:
+            Warning ("#pragma rodata-name is obsolete, please use #pragma rodata_name instead");
             /* FALLTHROUGH */
         case PRAGMA_RODATA_NAME:
+rodata_name:
             /* TODO: PES_STMT or even PES_EXPR maybe? */
             SegNamePragma (PES_FUNC, PRAGMA_RODATA_NAME, &B);
             break;
 
-        case PRAGMA_SIGNEDCHARS:
-            Warning ("#pragma signedchars is obsolete, please use #pragma signed-chars instead");
+        case PRAGMA_SIGNEDCHARS_OBSOLETE:
+            Warning ("#pragma signedchars is obsolete, please use #pragma signed_chars instead");
+            goto signed_chars;
+        case PRAGMA_SIGNED_CHARS_OBSOLETE:
+            Warning ("#pragma signed-chars is obsolete, please use #pragma signed_chars instead");
             /* FALLTHROUGH */
         case PRAGMA_SIGNED_CHARS:
+signed_chars:
             /* TODO: PES_STMT or even PES_EXPR maybe? */
             FlagPragma (PES_FUNC, Pragma, &B, &SignedChars);
             break;
 
-        case PRAGMA_STATICLOCALS:
-            Warning ("#pragma staticlocals is obsolete, please use #pragma static-locals instead");
+        case PRAGMA_STATICLOCALS_OBSOLETE:
+            Warning ("#pragma staticlocals is obsolete, please use #pragma static_locals instead");
+            goto static_locals;
+        case PRAGMA_STATIC_LOCALS_OBSOLETE:
+            Warning ("#pragma static-locals is obsolete, please use #pragma static_locals instead");
             /* FALLTHROUGH */
         case PRAGMA_STATIC_LOCALS:
+static_locals:
             /* TODO: PES_STMT or even PES_EXPR (PES_DECL) maybe? */
             FlagPragma (PES_FUNC, Pragma, &B, &StaticLocals);
             break;

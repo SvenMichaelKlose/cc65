@@ -29,7 +29,7 @@
 
 #include "_scanf.h"
 
-#pragma static-locals(on)
+#pragma static_locals(on)
 
 
 
